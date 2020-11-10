@@ -8,7 +8,7 @@ class TotalByCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<TransactionProvider>(context);
-    final value = provider.totalTransactionPerCategory;
+    var value = provider.totalTransactionPerCategory;
     return Container(
       height: 130.0,
       child: ListView.builder(

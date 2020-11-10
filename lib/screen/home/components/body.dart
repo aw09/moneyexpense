@@ -12,7 +12,8 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<TransactionProvider>(context);
-    final total = provider.totalToday;
+    var total = provider.totalToday;
+    print("Total today = " +total.toString());
     Size size = MediaQuery.of(context).size;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +42,7 @@ class Body extends StatelessWidget {
                             text: "Pengeluaran Anda hari ini\n",
                             style: TextStyle(color: whiteColor, fontSize: 18)),
                         TextSpan(
-                          text: "Rp. ${total}\n",
+                          text: "Rp. ${(total!=null) ? total : 0}\n",
                           style: TextStyle(color: whiteColor, fontSize: 28),
                         )
                       ]),

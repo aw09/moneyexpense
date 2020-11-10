@@ -153,6 +153,7 @@ class Body extends StatelessWidget {
                           );
                           if (_formKey.currentState.validate()) {
                             provider.addTransaction(transaction);
+                            provider.changeDate(DateTime.now());
                             Navigator.pop(context);
                           }
                         },

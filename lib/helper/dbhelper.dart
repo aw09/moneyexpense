@@ -27,7 +27,7 @@ class DbHelper {
     //untuk menentukan nama database dan lokasi yg dibuat
     Directory directory = await getTemporaryDirectory();
     String path = directory.path + 'trx.db';
-    print(path);
+    print("PATH = "+path);
 
     //create, read databases
     var todoDatabase = openDatabase(path, version: 1, onCreate: _createDb);
@@ -67,6 +67,8 @@ class DbHelper {
 
     Database db = await this.database;
     int count = await db.insert(tableName, object.toMap());
+    print("Object = "+object.transactionName);
+    print("Data insert = "+count.toString());
     return count;
   }
 
